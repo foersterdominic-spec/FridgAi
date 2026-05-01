@@ -3,8 +3,8 @@
   "short_name": "FridgAI",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#4CAF50",
+  "background_color": "#948888",
+  "theme_color": "#948888",
   "icons": [
     {
       "src": "Logo.png",
