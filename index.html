@@ -20,7 +20,7 @@
             }
 
             .container {
-                max-width: 400px;
+                max-width: 200px;
                 margin: auto;
                 background: #948888;
                 padding: 15px;
@@ -46,6 +46,15 @@
                 border-radius: 10px;
             }
 
+            .input-row {
+                display: flex;
+                gap: 10px;
+            }
+
+            .input-row input {
+                flex: 1;
+            }
+
         </style>
     </head>
     <body>
@@ -57,10 +66,12 @@
         <p>Dein smarter Kühlschrank</p>
 
         <div class="container">
-        <input id="food"
-        placeholder="Lebensmittel">
+            <div class="input-row">
+                <input id="food"
+                    placeholder="Lebensmittel">
 
-        <button onclick="addItem()">+</button>
+                    <button onclick="addItem()">+</button>
+            </div>
         </div>
         
         <ul id="list"></ul>
