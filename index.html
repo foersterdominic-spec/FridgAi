@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0">
         <title>FridgAi</title>
     </head>
     <body>
@@ -39,10 +41,29 @@
                  for (let i = 0; i< items.length; i++){
                     let li = document.createElement("li");
                     li.textContent = items[i];
+
+                    //Löschen Button erstellen
+                    let btn = document.createElement("button");
+                    btn.textContent = "🗑️";
+                    btn.style.background = "transparent";
+                    btn.style.border = "none";
+                    btn.style.cousor = "pointer";
+                    btn.style.fontSize = "18px";
+
+                    btn.onclick = function() {
+                        deleteItem(i)
+                    };
+
+                    li.appendChild(btn);
                     list.appendChild(li);
                  }
             }
-            render();
+
+            function deleteItem(index) {
+                items.splice(index, 1);
+                render();
+                render();
+            }
 
         </script>
 
