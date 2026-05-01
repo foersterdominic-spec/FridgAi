@@ -7,7 +7,7 @@
         <style>
             body {
                 font-family: Arial, sans-serif;
-                background: #948888
+                background: #948888;
                 padding: 20px;
             }
 
@@ -56,15 +56,14 @@
         
         <p>Dein smarter Kühlschrank</p>
 
-        <div>
+        <div class="container>
         <input id="food"
         placeholder="Lebensmittel">
 
         <button onclick="addItem()">+</button>
-        </div>
         
         <ul id="list"></ul>
-        
+        </div>
 
         <script>
             let items = JSON.parse(localStorage.getItem("fridgeai"))|| [];
@@ -95,7 +94,7 @@
                     btn.textContent = "🗑️";
                     btn.style.background = "transparent";
                     btn.style.border = "none";
-                    btn.style.cousor = "pointer";
+                    btn.style.cursor = "pointer";
                     btn.style.fontSize = "18px";
 
                     btn.onclick = function() {
@@ -109,7 +108,7 @@
 
             function deleteItem(index) {
                 items.splice(index, 1);
-                render();
+                saveData();
                 render();
             }
 
