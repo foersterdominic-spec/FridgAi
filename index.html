@@ -52,14 +52,18 @@
 
         <h1>FridgAi</h1>
 
+        <p>Die Zukunf ist da</p>
+        
         <p>Dein smarter Kühlschrank</p>
 
+        <div>
         <input id="food"
         placeholder="Lebensmittel">
 
-        <button onclick="addItem()">Hinzufügen</button>
+        <button onclick="addItem()">+</button>
 
         <ul id="list"></ul>
+        </div>
 
         <script>
             let items = JSON.parse(localStorage.getItem("fridgeai"))|| [];
