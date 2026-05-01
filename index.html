@@ -17,13 +17,18 @@
         <ul id="list"></ul>
 
         <script>
-            let items = [];
+            let items = JSON.parse(localStorage.getItem("fridgeai"))|| [];
+
+            function saveData() {
+                localStorage.setItem("fridgeai",JSON.stringify(items));
+            }
 
             function addItem() {
                 let input = document.getElementById("food");
-                console.log("VALUE:",input.value);
+                if (input.value == "") return;
                 items.push(input.value);
                 input.value = "";
+                saveData();
                 render();
             }
 
@@ -37,6 +42,8 @@
                     list.appendChild(li);
                  }
             }
+            render();
+
         </script>
 
     </body>
