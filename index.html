@@ -77,7 +77,6 @@
         <ul id="list"></ul>
 
         <script>
-            localStorage.clear()
             let items = JSON.parse(localStorage.getItem("fridgeai"))|| [];
 
             function saveData() {
@@ -89,8 +88,8 @@
                 if (input.value == "") return;
                 items.push(input.value);
                 input.value = "";
-                saveData();
                 render();
+                saveData();
             }
 
             function render() {
