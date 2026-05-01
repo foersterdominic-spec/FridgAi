@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FridgAi</title>
+    </head>
+    <body>
+
+        <h1>FridgAi</h1>
+
+        <p>Meine erste eigene Web-App</p>
+
+        <input id="food"
+        placeholder="Lebensmittel">
+
+        <button onclick="addItem()">Hinzufügen</button>
+
+        <ul id="list"></ul>
+
+        <script>
+            let items = [];
+
+            function addItem() {
+                let input = document.getElementById("food");
+                console.log("VALUE:",input.value);
+                items.push(input.value);
+                input.value = "";
+                render();
+            }
+
+            function render() {
+                let list = document.getElementById("list");
+                 list.innerHTML = "";
+                 
+                 for (let i = 0; i< items.length; i++){
+                    let li = document.createElement("li");
+                    li.textContent = items[i];
+                    list.appendChild(li);
+                 }
+            }
+        </script>
+
+    </body>
+</html>
