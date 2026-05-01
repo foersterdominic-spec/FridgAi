@@ -68,15 +68,16 @@
         <div class="container">
             <div class="input-row">
                 <input id="food"
-                    placeholder="Lebensmittel">
+                placeholder="Lebensmittel">
 
-                    <button onclick="addItem()">+</button>
+                <button onclick="addItem()">+</button>
             </div>
         </div>
         
         <ul id="list"></ul>
 
         <script>
+            localStorage.clear()
             let items = JSON.parse(localStorage.getItem("fridgeai"))|| [];
 
             function saveData() {
