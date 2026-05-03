@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="theme-color" content="#5d8eef">
+        <meta name="theme-color" content="#ffffff">
         <link rel="manifest" href="manifest.json">
         <meta name="viewport" 
         content="width=device-width, initial-scale=1.0">
@@ -10,34 +10,48 @@
         <style>
             body {
                 font-family: Arial, sans-serif;
-                background: #5d8eef;
+                background: #ffffff;
                 padding: 20px;
             }
 
             h1 {
                 text-align: center;
+                color: #2ebf21;
+                font-size: 40px;
+            }
+
+            h2 {
+                text-align: center;
+                color: rgb(0, 0, 0);
+                font-size: 35px;
             }
 
             p {
                 text-align: center;
             }
 
-            .container {
-                max-width: 400px;
-                margin: auto;
-                background: #84c6ff;
-                padding: 15px;
-                border-radius: 15px;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            .start-link,
+            .skip-link {
+                text-decoration: none;
             }
 
-            button {
-                padding: 10px;
-                border: none;
-                border-radius: 10px;
+            .start-btn {
+                background: #2ebf21;
+                color: white;
+                padding: 15px;
+                border-radius: 15px;
+                text-align: center;
+                font-size: 18px;
+            }
+
+            .skip-btn {
                 background: #ffffff;
-                colour: white;
-                font-size: 16px;
+                color: #8b8b8b;
+                padding: 15px;
+                border-radius: 15px;
+                text-align: center;
+                font-size: 18px;
+                margin: 15px;
             }
 
             ul {
@@ -53,15 +67,6 @@
                 margin-top: 8px;
                 background: #eee;
                 border-radius: 10px;
-            }
-
-            .input-row {
-                display: flex;
-                gap: 10px;
-            }
-
-            .input-row input {
-                flex: 1;
             }
 
             .sidebar {
@@ -143,63 +148,45 @@
                 margin-bottom: 10px;
             }
 
+            .center-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 70vh;
+            }
+
+            .center-container img {
+                width: 70%;
+                max-width: 400px;
+                heigth: auto;
+            }
+
         </style>
     </head>
     <body>
 
-        <div class = "menu-btn" onclick = "toggleMenu()">
-            <i class = "fa-solid fa-bars"></i>
+        <h1>FridgAi</h1>
+
+        <h2>Dein smarter<br>Kühlschrank.</h2>
+        
+        <p>Behalte den Überblick, vermeide<br>Lebensmittelverschwendung und<br>finde leckere Rezepte.</p>
+        
+        <div class = "center-container">
+            <img src = "Login_Kühlschrank.jpeg" class = "center-img">
         </div>
 
-            <div id="sidebar" class="sidebar">
-
-                <!-- HEADER -->
-                <div class="sidebar-header">
-                    <i class="fa-solid fa-xmark" onclick="toggleMenu()"></i>
-                </div>
-
-                <!-- INHALT -->
-                <div class="menu-content">
-                    <div class="menu-top">
-                        <a href="#"><i class="fa-solid fa-box"></i> Inventar</a>
-                        <a href="#"><i class="fa-solid fa-cart-shopping"></i> Einkaufsliste</a>
-                        <a href="#"><i class="fa-solid fa-book"></i> Rezepte</a>
-                    </div>
-
-                    <div class="menu-bottom">
-                        <a href="#"><i class="fa-solid fa-user"></i> Profil</a>
-                        <a href="#"><i class="fa-solid fa-gear"></i> Einstellungen</a>
-                    </div>
-                </div>
+        <a href = "Registrieren.html" class = "start-link">
+            <div class = "start-btn">
+                Los geht's
             </div>
-
-        <h1>Einkaufsliste</h1>
-
-        <p>Die Zukunf ist da</p>
-        
-        <p>Dein smarter Kühlschrank</p>
-
-        <div class="container">
-            <div class="input-row">
-                <input id="food"
-                placeholder="Lebensmittel">
-
-                <button onclick="addItem()">+</button>
+        </a>
+        <a href = "Start page.html" class = "skip-link">
+            <div class = "skip-btn">
+                Überspringen
             </div>
-        </div>
-        
-        <ul id="list"></ul>
+        </a>
 
         <script>
-
-            function toggleMenu() {
-                let sidebar = document.getElementById("sidebar");
-                if (sidebar.style.left === "0px") {
-                    sidebar.style.left = "-250px";
-                } else {
-                    sidebar.style.left = "0px";
-                }
-            }
 
             let items = JSON.parse(localStorage.getItem("fridgeai"))|| [];
 
