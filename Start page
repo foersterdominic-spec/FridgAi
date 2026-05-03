@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="theme-color" content="#ffffff">
+        <link rel="manifest" href="manifest.json">
+        <meta name="viewport" 
+        content="width=device-width, initial-scale=1.0">
+        <title>FridgAi</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                background: white;
+                padding-bottom: 70px;
+            }
+
+            .header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px;
+                background: white;
+            }
+
+            h1 {
+                color: #2ebf21;
+            }
+        </style>
+    </head>
+    <body>
+
+         <div class = "header">
+            <i class = "fa-solid fa-gear"></i>
+            <h1>FridgAi</h1>
+            <i class = "fa-regular fa-bell"></i>
+        </div>
+
+        <div class = "welcome">
+            <h2>Guten Tag! ☀️</h2>
+            <p>Hier ist dein Inventar im Überblick.</p>
+        </div>
+        
+    </body>
+    <script>
+
+    </script>
+</html>
